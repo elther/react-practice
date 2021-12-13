@@ -5,16 +5,17 @@ function App() {
   return (
     <div className="container">
       <h1>Hello world2</h1>
-      <FuncComp></FuncComp>
-      <ClassComp></ClassComp>
+      <FuncComp initNumber={2}></FuncComp>
+      <ClassComp initNumber={2}></ClassComp>
     </div>
   );
 }
 
-function FuncComp() {
+function FuncComp(props) {
   return (
     <div className="container">
       <h2>function style component</h2>
+      <p>Number : {props.initNumber} </p>
     </div>
   );
 }
@@ -24,6 +25,7 @@ class ClassComp extends React.Component{
     return (
       <div className="container">
         <h2>class style component</h2>
+        <p>Number : {this.props.initNumber} </p>
       </div>
     );
   }
