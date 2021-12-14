@@ -35,7 +35,7 @@ function FuncComp(props) {
     console.log('%cfunc => useEffect (componentDidMount & componentDidUpdate)'+(++funcId), funcStyle);
     document.title = number;
     return function(){
-
+        console.log('%cfunc => useEffect return (componentDidMount & componentDidUpdate)'+(++funcId), funcStyle);
     }
   }, []);
 
@@ -68,27 +68,7 @@ class ClassComp extends React.Component{
     number:this.props.initNumber,
     date:(new Date()).toString()
   }
-  componentWillMount(){
-    console.log('%cclass => componentWillMount', classStyle);
-  }
-  componentDidMount(){
-    console.log('%cclass => componentDidMount', classStyle);
-  }
-  shouldComponentUpdate(nextProps, nextState){
-    console.log('%cclass => shouldComponentUpdate', classStyle);
-    return true;
-  }
-  componentWillUpdate(nextProps, nextState){
-    console.log('%cclass => componentWillUpdate', classStyle);
-    return true;
-  }
-  componentDidUpdate(nextProps, nextState){
-    console.log('%cclass => componentDidUpdate', classStyle);
-    return true;
-  }
-  componentWillUnMount(){
-    console.log('%cclass => componentWillUnMount', classStyle);
-  }
+
   render(){
     console.log('%cclass => render', classStyle);
     return (
